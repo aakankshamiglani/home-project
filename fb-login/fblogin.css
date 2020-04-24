@@ -1,0 +1,304 @@
+            .logo {
+                background-color: #4267B2;
+                display: flex;
+                height: 90px;
+                width: 100%;
+                flex-wrap: wrap;
+                flex-basis: 33%;
+                flex-grow: 1;
+                flex-shrink: 0;
+                color: white;
+            }
+            
+            footer {
+                display: flex;
+                flex-basis: 50%;
+                flex-grow: 1;
+                flex-shrink: 1;
+                margin-top: 5px;
+                padding: 10px;
+                background-color: white;
+                width: 100%;
+                height: 200px;
+                flex-wrap: wrap;
+            }
+            
+            footer div {
+                flex-grow: 1;
+                color: #4267B2;
+                word-spacing: 20px;
+            }
+            
+            body {
+                background-color: gainsboro;
+            }
+            
+            .fblogo,
+            .login {
+                flex-basis: 49%;
+                flex-grow: 1;
+                flex-shrink: 1;
+                text-align: center;
+                align-self: center;
+                background-color: #4267B2;
+            }
+            
+            .fblogo {
+                font-weight: 500;
+                font-size: 50px;
+            }
+            
+            .login label {
+                font-weight: 500;
+            }
+            
+            #login {
+                background-color: rgb(66, 129, 178);
+                color: white;
+                border: 0.5px #4267B2;
+                font-size: 12px;
+                padding: 1px;
+                width: 40px;
+                height: 19px;
+                position: relative;
+            }
+            
+            #login:hover {
+                background-color: #4267B2;
+            }
+            
+            .login a {
+                text-decoration: none;
+                color: lightgray;
+                /*  position: absolute; */
+                top: 68px;
+                right: 272px;
+            }
+            
+            .login a:hover {
+                text-decoration: underline;
+                color: lightgray;
+            }
+            
+            .login label {
+                top: 17px;
+                /*  position: absolute; */
+            }
+            
+            .main {
+                display: flex;
+                flex-basis: 50%;
+                flex-grow: 0;
+                flex-shrink: 1;
+                text-align: center;
+                align-self: center;
+                flex-wrap: wrap;
+            }
+            
+            .leftcol {
+                flex-basis: 50%;
+                flex-grow: 1;
+                flex-shrink: 0;
+            }
+            
+             ::placeholder {
+                padding: 5px;
+            }
+            
+            .signup {
+                flex-basis: 30%;
+                flex-grow: 1;
+                flex-shrink: 0;
+                justify-content: flex-start;
+                text-align: left;
+                margin: 5px;
+                padding: 7px;
+            }
+            
+            #fb {
+                color: #333;
+                font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+                font-size: 36px;
+                font-weight: bold;
+                line-height: 1.2;
+                margin-bottom: 5px;
+                margin-top: 4px;
+            }
+            
+            #caption {
+                color: #333;
+                font-family: 'Freight Sans', Helvetica, Arial, sans-serif;
+                font-size: 19px;
+                line-height: 1.26;
+                margin-top: 3px;
+                margin-bottom: 20px;
+            }
+            
+            [type="text"],
+            [type="email"],
+            [type="password"] {
+                border-radius: 5px;
+                border: 1px solid gainsboro;
+                margin-bottom: 10px;
+            }
+            
+            .email,
+            .pwd {
+                width: 354px;
+                height: 21px;
+            }
+            
+            [type="text"] {
+                width: 172px;
+                height: 21px;
+            }
+            
+            .gray {
+                color: #90949c;
+                font-size: 16px;
+                font-weight: bold;
+            }
+            
+            .gender {
+                color: #1d2129;
+                font-size: 18px;
+                font-weight: normal;
+                line-height: 18px;
+                padding: 0 10px 0 3px;
+            }
+            
+            .fa-question-circle {
+                color: gray;
+            }
+            
+            .consent {
+                color: #777;
+                font-size: 11px;
+                width: 316px;
+            }
+            
+            .signup a {
+                text-decoration: none;
+                color: #385898;
+            }
+            
+            .signup a:hover {
+                text-decoration: underline;
+                color: #385898;
+            }
+            
+            #signup {
+                font-size: 19px;
+                background-color: #578843;
+                color: white;
+                width: 172px;
+                height: 43px;
+                border: 0.5px solid #578843;
+                border-radius: 5px;
+            }
+            
+            #signup:hover {
+                transition: 200ms color linear;
+                background-color: #67ae55;
+            }
+            
+            li {
+                list-style-type: none;
+                color: #666;
+                display: inline-block;
+                font-size: 15px;
+                line-height: 20px;
+                vertical-align: middle;
+                width: 440px;
+                margin: 16px;
+            }
+            
+            h2 {
+                color: #333;
+                display: inline-block;
+                font-size: 28px;
+                letter-spacing: normal;
+                line-height: 36px;
+                padding: 42px 0 24px;
+                text-rendering: optimizelegibility;
+                width: 456px;
+            }
+            
+            .leftcollist {
+                color: #333;
+                font-family: 'Freight Sans Bold', Helvetica, Arial, sans-serif;
+                font-size: 17px;
+                font-weight: bold;
+                line-height: 22px;
+                margin-right: 2px;
+            }
+            
+            .fa-image,
+            .fa-laptop,
+            .fa-connectdevelop {
+                font-size: 35px;
+            }
+            
+            @media(min-width:320px) and (max-width:600px) {
+                .leftcol {
+                    display: none;
+                }
+                .login {
+                    flex-direction: column;
+                    flex-basis: 50%;
+                    margin-top: 15px;
+                }
+                .fblogo {
+                    flex-basis: 100%;
+                }
+                footer div {
+                    flex-wrap: wrap;
+                    flex-basis: 20%;
+                    height: 250px;
+                }
+                .signup {
+                    margin-top: 46px;
+                }
+                .email,
+                .pwd {
+                    height: 21px;
+                    width: 300px;
+                }
+                .login a {
+                    text-decoration: none;
+                    color: lightgray;
+                }
+                #pwdmedia {
+                    margin-left: 1px;
+                    margin-right: 0px;
+                    padding-right: 37px;
+                }
+            }
+            
+            @media(min-width:360px) and (max-width:600px) {
+                #pwdmedia {
+                    margin-left: 6px;
+                    margin-right: 1px;
+                    padding-right: 33px;
+                }
+            }
+            
+            @media(min-width:768px) and (max-width:1024px) {
+                .login {
+                    flex-direction: column;
+                    flex-basis: 50%;
+                    margin-top: 15px;
+                }
+                .fblogo {
+                    flex-basis: 100%;
+                }
+                footer div {
+                    flex-wrap: wrap;
+                    flex-basis: 20%;
+                    height: 250px;
+                }
+                .signup {
+                    text-align: center;
+                    margin-top: 46px;
+                }
+            }
