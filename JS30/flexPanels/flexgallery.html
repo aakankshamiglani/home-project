@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="panels">
+        <div class="panel panel1">
+            <p>Hey</p>
+            <p>Start</p>
+            <p>Now</p>
+        </div>
+        <div class="panel panel2">
+            <p>Choose</p>
+            <p>To</p>
+            <p>Shine</p>
+        </div>
+        <div class="panel panel3">
+            <p>Believe</p>
+            <p>In</p>
+            <p>Yourself</p>
+        </div>
+        <div class="panel panel4">
+            <p>Smile</p>
+            <p>Spark</p>
+            <p>Shine</p>
+        </div>
+        <div class="panel panel5">
+            <p>Wild</p>
+            <p>At</p>
+            <p>Heart</p>
+        </div>
+    </div>
+
+    <script>
+        const panels = document.querySelectorAll('.panel')
+
+
+        function toggle() {
+
+            this.classList.toggle('open');
+        }
+
+        function Anime(e) {
+
+            if (e.propertyName === 'flex-grow') {
+                this.classList.toggle('openactive');
+            }
+
+        }
+
+        panels.forEach(panel => panel.addEventListener('click', toggle));
+        panels.forEach(panel => panel.addEventListener('transitionend', Anime));
+    </script>
+
+</body>
+
+</html>

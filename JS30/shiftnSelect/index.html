@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hold Shift and Select</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: gainsboro;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        input:checked+p {
+            background: red;
+            text-decoration: line-through;
+        }
+    </style>
+
+
+
+    <div class="content">
+        <div class="line">
+            <input type="checkbox">
+            <p>This is first line.</p>
+        </div>
+        <div class="line">
+            <input type="checkbox">
+            <p>This is second line.</p>
+        </div>
+        <div class="line">
+            <input type="checkbox">
+            <p>This is third line.</p>
+        </div>
+        <div class="line">
+            <input type="checkbox">
+            <p>This is fourth line.</p>
+        </div>
+        <div class="line">
+            <input type="checkbox">
+            <p>This is a fifth line.</p>
+        </div>
+        <div class="line">
+            <input type="checkbox">
+            <p>This is a sixth line.</p>
+        </div>
+        <div class="line">
+            <input type="checkbox">
+            <p>This is a seventh line.</p>
+        </div>
+        <div class="line">
+            <input type="checkbox">
+            <p>This is a eight line.</p>
+        </div>
+    </div>
+
+    <script>
+        const checkboxes = document.querySelectorAll('.line input[type="checkbox"]');
+        let lastSelected = false;
+
+
+        function handlecheckbox(e) {
+            let isBetween = false;
+
+            if (e.shiftKey && this.checked) {
+                //do logic here loop over evey checkbox to see what is selected in between and then select them
+
+                checkboxes.forEach(checkbox => {
+                    if (checkbox === this || checkbox == lastSelected) {
+                        isBetween = !isBetween;
+                        console.log('btwn is getting selected hopefuly')
+                    }
+
+                    if (isBetween) {
+                        checkbox.checked = true;
+                    }
+
+                })
+            }
+            lastSelected = this;
+        }
+
+        checkboxes.forEach(checkbox => checkbox.addEventListener('click', handlecheckbox))
+    </script>
+</body>
+
+</html>

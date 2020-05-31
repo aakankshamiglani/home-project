@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>TO DO LIST </h2>
+        <ul class="plates">
+            <li>Loading list...</li>
+        </ul>
+
+        <form class="add-item">
+            <input type="text" name="item" placeholder="Add Item" required>
+            <input type="submit" value="+ Add Item">
+        </form>
+    </div>
+
+
+    <script>
+        const additem = document.querySelector('.add-item');
+        const viewlist = document.querySelector('.plates');
+        const items = JSON.parse(localStorage.getItem('items')) || [];
+
+        function addItem(e) {
+            e.preventDefault();
+            const newitem = (this.querySelector('[name = item]')).value;
+            const item = {
+                newitem,
+                done: false
+            };
+            items.push(item);
+            popuList(items, viewlist);
+            localStorage.setItem('items', JSON.stringify(items));
+            this.reset();
+        };
+
+        function popuList(plates = [], platelist) {
+
+            platelist.innerHTML = plates.map((plate, i) => {
+
+                return `
+          
+          <li>
+         <input type="checkbox" data-index=${i} id="item${i}" ${plate.done ? 'checked' : ''}/>
+         <label for="items${i}">${plate.newitem}</label>
+            
+         </li>
+          `;
+            }).join('');
+        }
+
+        function toggleDone(e) {
+            if (!e.target.matches('input')) return; //skip this till tag is input tag
+            const el = e.target;
+            const index = el.dataset.index;
+            items[index].done = !items[index].done;
+            localStorage.setItem('items', JSON.stringify(items));
+            popuList(items, viewlist);
+        }
+
+        additem.addEventListener('submit', addItem);
+        viewlist.addEventListener('click', toggleDone)
+        popuList(items, viewlist);
+    </script>
+</body>
+
+
+
+</html>

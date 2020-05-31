@@ -1,0 +1,93 @@
+body {
+    background-color: gainsboro;
+}
+
+nav {
+    background: black;
+    top: 0;
+    width: 100%;
+    transition: all 0.5s;
+    position: relative;
+    z-index: 1;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    background: black;
+}
+
+nav li {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    color: gainsboro;
+}
+
+header {
+    background: url('http://unsplash.it/400/100') bottom center no-repeat;
+    display: flex;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50vh;
+}
+
+h1 {
+    text-align: center;
+}
+
+.site-wrap {
+    text-align: justify;
+    padding: 10px;
+    margin: 70px;
+    border: 1px solid gray;
+    padding: 20px;
+    transition: all 0.5s;
+    transform: scale(0.90);
+    box-shadow: 0 0 5px gray;
+}
+
+.fix-nav .site-wrap {
+    transform: scale(1);
+}
+
+.align-left {
+    float: left;
+    padding: 10px;
+}
+
+.align-right {
+    float: right;
+    padding: 10px;
+}
+
+li.logo {
+    max-width: 0;
+    overflow: hidden;
+    background: white;
+    transition: all .5s;
+    font-weight: 600;
+    font-size: 30px;
+    color: black;
+}
+
+.fix-nav nav {
+    position: fixed;
+    box-shadow: 0 5px black;
+}
+
+.fix-nav li.logo {
+    max-width: 200px;
+}

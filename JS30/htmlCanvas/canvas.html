@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Canvas</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="400px" height="400px">dddddd</canvas>
+</body>
+
+<script>
+    const area = document.querySelector('#canvas');
+    const cntxt = area.getContext('2d');
+    area.width = window.innerWidth;
+    area.height = window.innerHeight;
+    cntxt.lineCap = 'round';
+    cntxt.lineJoin = 'round';
+    cntxt.strokeStyle = '#BADA55';
+    cntxt.lineWidth = 30;
+
+    let isDraw = false;
+    let lastX = 0;
+    let lastY = 0;
+    let hue = 0;
+
+    function draw(e) {
+
+        if (!isDraw) return;
+        cntxt.beginPath();
+        cntxt.moveTo(lastX, lastY);
+        cntxt.lineTo(e.offsetX, e.offsetY)
+        cntxt.stroke();
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+        hue++;
+        cntxt.strokeStyle = `hsl(${hue},100%,50%)`
+            /*  lastX = e.offsetX;
+             lastY = e.offsetY; */
+
+    }
+
+
+    area.addEventListener('mousedown', (e) => {
+        isDraw = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+    });
+
+    area.addEventListener('mousemove', draw);
+    area.addEventListener('mouseup', () => isDraw = false);
+    area.addEventListener('mouseout', () => isDraw = false);
+</script>
+
+</html>

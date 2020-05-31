@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konami Code</title>
+</head>
+
+<body>
+    <div class="notactive">
+        <img src='easter.jpg' style="height: 200px; width: 200px;" alt="img was not loaded">
+    </div>
+
+    <style>
+        div.notactive {
+            opacity: 0;
+        }
+        
+        div.active {
+            opacity: 1;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        const secretcode = "ashumig";
+        const setKeys = [];
+
+        window.addEventListener('keyup', (e) => {
+            console.log(e.key);
+            setKeys.push(e.key);
+            setKeys.splice(secretcode.length - 1, setKeys.length - secretcode.length);
+            if (setKeys.join('').includes(secretcode)) {
+                var div = document.querySelector('.notactive');
+                div.classList.add('active');
+
+            }
+            console.log(setKeys);
+        })
+    </script>
+</body>
+
+</html>
