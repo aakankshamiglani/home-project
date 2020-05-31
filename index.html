@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>TO-DO LIST</h2>
+        <form class="" action="index.html" method="post">
+            <div class="search">
+                <input type="text" placeholder="Enter new item" name="name" required>
+                <button type="submit" id="add">ADD</button>
+            </div>
+        </form>
+
+
+        <div class="results">
+            <ul>
+                <li>
+                    <span class="delete">×</span><input type="checkbox"><label>Vanilla JavaScript</label>
+                </li>
+                <li>
+                    <span class="delete">×</span><input type="checkbox"><label>angular</label>
+                </li>
+                <li>
+                    <span class="delete">×</span><input type="checkbox"><label>Jquery</label>
+                </li>
+            </ul>
+            <div class="clear"><a id="clear">Clear List</a></div>
+        </div>
+
+</body>
+<script>
+    /*  const button = document.querySelector('#add');
+     */
+    loadEvents();
+    // load every event in the page
+    function loadEvents() {
+        document.querySelector('form').addEventListener('submit', submit);
+        document.querySelector('#clear').addEventListener('click', clearList);
+
+        document.querySelector('ul').addEventListener('click', tickOrDelete);
+    }
+
+    function submit(e) {
+        e.preventDefault();
+        const inputText = document.querySelector('input');
+
+        if (inputText.value != '')
+            addNew(inputText.value);
+        document.querySelector('form').reset();
+    }
+
+    function addNew(newItem) {
+        const ul = document.querySelector('ul');
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="delete">×</span><input type="checkbox"><label>${newItem}</label>`;
+        console.log(li.innerHTML);
+        ul.appendChild(li);
+        document.querySelector('.results').style.display = 'block';
+
+    }
+
+    function clearList() {
+        let ul = document.querySelector('ul').innerHTML = "";
+    }
+
+    function tickOrDelete(e) {
+        if (e.target.className == 'delete') {
+            deleteItem(e);
+        } else {
+            tickItem(e);
+        }
+
+    }
+
+    function deleteItem(e) {
+
+        let del = e.target.parentNode;
+
+        let parentNode = del.parentNode;
+        console.log(parentNode);
+        parentNode.removeChild(del);
+    };
+
+    function tickItem(e) {
+        let strikked = e.target.nextSibling;
+        console.log(strikked);
+        if (e.target.checked) {
+            strikked.style.textDecoration = "line-through";
+            strikked.style.color = "#ff0000";
+
+        } else {
+            strikked.style.textDecoration = "none";
+            strikked.style.color = "black";
+        }
+
+    };
+</script>
+
+</html>
