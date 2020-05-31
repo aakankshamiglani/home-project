@@ -1,0 +1,49 @@
+.keys {
+    display: flex;
+    flex-basis: 15%;
+    height: 550px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+    justify-self: center;
+}
+
+.key {
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 30px;
+    border: 2px solid black;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    margin-left: 40px;
+    transition: all 0.15s;
+    border-radius: 5PX;
+}
+
+.playing {
+    transform: scale(1.1);
+    border-color: yellow;
+    box-shadow: 2px 2px yellow;
+}
+
+body {
+    background-image: linear-gradient(to bottom, gray, black);
+}
+
+h1 {
+    text-align: center;
+    margin: 0 auto;
+    bottom: 30px;
+    color: black;
+}
+
+kbd {
+    display: inline;
+    font-size: 35px;
+    color: wheat;
+}
+
+.sound {
+    color: goldenrod;
+}
